@@ -25,15 +25,12 @@
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  list-style: none;
   font-family: "Inter", sans-serif;
 }
 
 html {
   font-size: 62.5%;
-}
-
-body {
-  background-color: rgb(54, 54, 54);
 }
 
 button {
@@ -66,6 +63,35 @@ ul {
   padding: 0px 1.5rem;
 }
 
+h1, h2, h3 {
+  font-family: "Montserrat", sans-serif;
+  line-height: 150%; /* 1.6875rem */
+}
+
+h1, h2 {
+  font-weight: 700;
+}
+
+h2, h3 {
+  color: #2F3133;
+}
+
+h1 {
+  color: #FFF;
+  font-size: 6.4rem;
+  letter-spacing: -0.04rem;
+}
+
+h2 {
+  font-size: 3.2rem;
+  letter-spacing: -0.02rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
 .tag {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -76,7 +102,6 @@ ul {
   border-radius: 24.4rem;
   background: #FFF;
   max-width: 12.1rem;
-  height: 3.4rem;
   padding: 6px 4px;
 }
 .tag.tag-blue .icon {
@@ -88,7 +113,7 @@ ul {
 .tag .icon {
   width: 2.6rem;
   height: 2.6rem;
-  border-radius: 24.4rem;
+  border-radius: 244px;
   background: rgba(194, 0, 0, 0.2);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -99,7 +124,7 @@ ul {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-right: 8px;
+  margin-right: 0.8rem;
 }
 .tag span {
   color: #C20001;
@@ -809,35 +834,6 @@ ul {
   transform: translateY(0);
 }
 
-h1, h2, h3 {
-  font-family: "Montserrat", sans-serif;
-  line-height: 150%; /* 1.6875rem */
-}
-
-h1, h2 {
-  font-weight: 700;
-}
-
-h2, h3 {
-  color: #2F3133;
-}
-
-h1 {
-  color: #FFF;
-  font-size: 6.4rem;
-  letter-spacing: -0.04rem;
-}
-
-h2 {
-  font-size: 3.2rem;
-  letter-spacing: -0.02rem;
-}
-
-h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
-}
-
 header {
   position: absolute;
   top: 0;
@@ -850,6 +846,7 @@ header {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  z-index: 2022;
 }
 header .container {
   display: -webkit-box;
@@ -865,6 +862,7 @@ header .container {
 header p {
   color: #FFF;
   font-size: 1.3rem;
+  line-height: 1.6rem;
   line-height: normal;
 }
 
@@ -893,4 +891,24 @@ footer .text p {
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 180%;
+}
+
+.s-area-slide-hero {
+  position: relative;
+  width: 100%;
+  height: 99.4rem;
+}
+.s-area-slide-hero .slide-hero {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.s-area-slide-hero .slide-hero .main-area {
+  background: url("../assets/bg-red.svg") no-repeat center center;
+  width: 100%;
+  height: 70.6rem;
+  background-size: cover;
+}
+.s-area-slide-hero .slide-hero .main-area .text .image {
+  margin-top: 20rem;
 }

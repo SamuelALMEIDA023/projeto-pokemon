@@ -1,0 +1,21 @@
+.s-area-slide-hero {
+    position: relative;
+    width: 100%;
+    height: 99.4rem;
+    .slide-hero {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        .main-area {
+            background: url("../assets/bg-red.svg") no-repeat center center;
+            width: 100%;
+            height: 70.6rem;
+            background-size: cover;
+            .text {
+                .image {
+                    margin-top: 20rem;
+                }
+            }
+        }
+    }
+}
