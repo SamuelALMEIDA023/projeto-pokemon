@@ -8,18 +8,25 @@
         overflow: hidden;
         .swiper-slide {
             &.blue {
-               .main-area {
-                background-image: url("..//assets/bg-blue.svg");
-                .text {
-                    .image {
-                        .pokeball {
-                            position: relative;
-                            top: -6.5rem;
-                            left: 1.3rem;
+                .main-area {
+                    background-image: url("..//assets/bg-blue.svg");
+                    .text {
+                        .image {
+                            .pokeball {
+                                position: relative;
+                                top: -6.5rem;
+                                left: 1.3rem;
+                            }
+                        }
+                    }
+                    .area-explore {
+                        .txt {
+                            .icon {
+                                background-color: rgba(175, 192, 227, 0.3);
+                            }
                         }
                     }
                 }
-               }
             }
             &:after {
                 content: "";
@@ -85,6 +92,8 @@
                     justify-content: space-between;
                     .txt {
                         position: relative;
+                        top: -3.9rem;
+                        left: -2.4rem;
                         display: flex;
                         align-items: center;
                         transform: rotate(-90deg);
@@ -99,6 +108,17 @@
                         span {
                             color: #FFF;font-family: Inter;font-size: 1.3rem;font-weight: 500;line-height: 150%; 
                             margin-left: 3rem;
+                        }
+                    }
+                    .swiper-pagination {
+                        position: relative;
+                        .swiper-pagination-bullet {
+                            width: 7px;
+                            height: 7px;
+                            background-color: #ffffff;
+                            &:not(:first-child) {
+                                margin-left: 8px;
+                            }
                         }
                     }
                 }
