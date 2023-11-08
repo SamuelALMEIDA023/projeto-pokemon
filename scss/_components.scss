@@ -71,7 +71,7 @@
     filter: grayscale(100%); //estado default preto-branco
     opacity: 0.6;
     transition: opacity .3s;
-    &:hover {
+    &:hover, &.active {
         filter: grayscale(0%);
         opacity: 1;
     }
@@ -85,6 +85,11 @@
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 150%; 
+    }
+    &.all {
+        span {
+            color: var(--blue-primary);
+        }
     }
     &.ghost {
         span {
