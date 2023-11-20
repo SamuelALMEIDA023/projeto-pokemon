@@ -252,6 +252,9 @@
                 position: relative;
                 margin-bottom: 5.5rem;
                 &.active {
+                    .item-selected {
+                        border-radius: 1rem 1rem 0 0;
+                    }
                    .dropdown-select {
                     opacity: 1;
                     pointer-events: all;
@@ -267,6 +270,7 @@
                     border-radius: 1rem;
                     display: flex;
                     align-items: center;
+                    transition: all .3s;
                     span {
                         color: rgba(122, 125, 128, 0.6);
                         font-size: 1.4rem;

@@ -1169,6 +1169,9 @@ footer .text p {
   position: relative;
   margin-bottom: 5.5rem;
 }
+.s-all-pokemon .area-all .right-container .select-custom.active .item-selected {
+  border-radius: 1rem 1rem 0 0;
+}
 .s-all-pokemon .area-all .right-container .select-custom.active .dropdown-select {
   opacity: 1;
   pointer-events: all;
@@ -1187,6 +1190,8 @@ footer .text p {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .s-all-pokemon .area-all .right-container .select-custom .item-selected span {
   color: rgba(122, 125, 128, 0.6);

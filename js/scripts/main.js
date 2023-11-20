@@ -24,5 +24,15 @@ cardPokemon.forEach(card => {
 closeModal.addEventListener('click', closeDetailsModal);
 
 
+const btnSelectCustom = document.querySelector('.js-open-select-custom');
+
+btnSelectCustom.addEventListener('click', () => {
+  btnSelectCustom.parentElement.classList.toggle('active')
+})
+
+function openSelectCustom() {
+  document.documentElement.classList.add('open-select')
+}
+
 
 
