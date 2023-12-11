@@ -19,4 +19,19 @@ footer {
             line-height: 180%;
         }
     }
+    @media(max-width: 560px) {
+        .container {
+            padding: 4rem;
+            flex-direction: column;
+            .text {
+                margin-bottom: 4.8rem;
+                h3 {
+                    text-align: center;
+                }
+                p {
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
