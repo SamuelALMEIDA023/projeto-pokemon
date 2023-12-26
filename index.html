@@ -96,8 +96,8 @@
             <div class="top">
                 <h2>Select your Pokémon</h2>
                 <div class="search">
-                    <input type="text" placeholder="Search name or code">
-                    <button type="button">
+                    <input type="text" id="searchInput" placeholder="Search name or code">
+                    <button id="searchButton" type="button" disabled>
                         <img src="assets/icon-search.svg" alt="search">
                     </button>
                 </div>            
@@ -121,29 +121,13 @@
                                 <span>Fire</span>
                             </button>
                         </li>
-                        <li>
-                            <button class="type-filter dragon ">
-                                <div class="icon">
-                                    <img src="assets/icon-types/dragon.svg" alt="">
-                                </div>
-                                <span>Dragon</span>
-                            </button>
-                        </li>
-                        <li>
-                            <button class="type-filter ghost ">
-                                <div class="icon">
-                                    <img src="assets/icon-types/ghost.svg" alt="">
-                                </div>
-                                <span>Ghost</span>
-                            </button>
-                        </li>
                     </ul>
                 </div>
                 <div class="right-container">
                     <div class="top-container">
                         <div>
                             <img src="assets/icon-pokeball.svg" alt="">
-                            <span><strong id="js-count-pokemons">150</strong>Pokémons</span>
+                            <span><strong id="js-count-pokemons"> - </strong> Pokémons</span>
                         </div>
                     </div>
                     <div class="select-custom">
@@ -176,170 +160,13 @@
                                     <span>Dragon</span>
                                 </button>
                             </li>
-                            <li>
-                                <button class="type-filter ghost ">
-                                    <div class="icon">
-                                        <img src="assets/icon-types/ghost.svg" alt="">
-                                    </div>
-                                    <span>Ghost</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button class="type-filter ghost ">
-                                    <div class="icon">
-                                        <img src="assets/icon-types/ghost.svg" alt="">
-                                    </div>
-                                    <span>Ghost</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button class="type-filter ghost ">
-                                    <div class="icon">
-                                        <img src="assets/icon-types/ghost.svg" alt="">
-                                    </div>
-                                    <span>Ghost</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button class="type-filter ghost ">
-                                    <div class="icon">
-                                        <img src="assets/icon-types/ghost.svg" alt="">
-                                    </div>
-                                    <span>Ghost</span>
-                                </button>
-                            </li>
                         </ul>
                     </div>
-                    <div class="all">
-                        <button class="card-pokemon js-open-details-pokemon ground">
-                            <div class="image">
-                                <img src="assets/bulbasaur.svg" alt="">
-                            </div>
-                            <div class="info">
-                                <div class="txt">
-                                    <span>#001</span>
-                                    <h3>Bulbasaur</h3>
-                                </div>
-                                <div class="icon">
-                                    <img src="assets/icon-types/ground.svg" alt="">
-                                </div>
-                            </div>
-                        </button>
-                        <button class="card-pokemon js-open-details-pokemon ground">
-                            <div class="image">
-                                <img src="assets/bulbasaur.svg" alt="">
-                            </div>
-                            <div class="info">
-                                <div class="txt">
-                                    <span>#001</span>
-                                    <h3>Bulbasaur</h3>
-                                </div>
-                                <div class="icon">
-                                    <img src="assets/icon-types/ground.svg" alt="">
-                                </div>
-                            </div>
-                        </button>
-                        <button class="card-pokemon js-open-details-pokemon ground">
-                            <div class="image">
-                                <img src="assets/bulbasaur.svg" alt="">
-                            </div>
-                            <div class="info">
-                                <div class="txt">
-                                    <span>#001</span>
-                                    <h3>Bulbasaur</h3>
-                                </div>
-                                <div class="icon">
-                                    <img src="assets/icon-types/ground.svg" alt="">
-                                </div>
-                            </div>
-                        </button>
-                        <button class="card-pokemon js-open-details-pokemon ground">
-                            <div class="image">
-                                <img src="assets/bulbasaur.svg" alt="">
-                            </div>
-                            <div class="info">
-                                <div class="txt">
-                                    <span>#001</span>
-                                    <h3>Bulbasaur</h3>
-                                </div>
-                                <div class="icon">
-                                    <img src="assets/icon-types/ground.svg" alt="">
-                                </div>
-                            </div>
-                        </button>
-                        <button class="card-pokemon js-open-details-pokemon ground">
-                            <div class="image">
-                                <img src="assets/bulbasaur.svg" alt="">
-                            </div>
-                            <div class="info">
-                                <div class="txt">
-                                    <span>#001</span>
-                                    <h3>Bulbasaur</h3>
-                                </div>
-                                <div class="icon">
-                                    <img src="assets/icon-types/ground.svg" alt="">
-                                </div>
-                            </div>
-                        </button>
-                        <button class="card-pokemon js-open-details-pokemon ground">
-                            <div class="image">
-                                <img src="assets/bulbasaur.svg" alt="">
-                            </div>
-                            <div class="info">
-                                <div class="txt">
-                                    <span>#001</span>
-                                    <h3>Bulbasaur</h3>
-                                </div>
-                                <div class="icon">
-                                    <img src="assets/icon-types/ground.svg" alt="">
-                                </div>
-                            </div>
-                        </button>
-                        <button class="card-pokemon js-open-details-pokemon ground">
-                            <div class="image">
-                                <img src="assets/bulbasaur.svg" alt="">
-                            </div>
-                            <div class="info">
-                                <div class="txt">
-                                    <span>#001</span>
-                                    <h3>Bulbasaur</h3>
-                                </div>
-                                <div class="icon">
-                                    <img src="assets/icon-types/ground.svg" alt="">
-                                </div>
-                            </div>
-                        </button>
-                        <button class="card-pokemon js-open-details-pokemon ground">
-                            <div class="image">
-                                <img src="assets/bulbasaur.svg" alt="">
-                            </div>
-                            <div class="info">
-                                <div class="txt">
-                                    <span>#001</span>
-                                    <h3>Bulbasaur</h3>
-                                </div>
-                                <div class="icon">
-                                    <img src="assets/icon-types/ground.svg" alt="">
-                                </div>
-                            </div>
-                        </button>
-                        <button class="card-pokemon js-open-details-pokemon ground">
-                            <div class="image">
-                                <img src="assets/bulbasaur.svg" alt="">
-                            </div>
-                            <div class="info">
-                                <div class="txt">
-                                    <span>#001</span>
-                                    <h3>Bulbasaur</h3>
-                                </div>
-                                <div class="icon">
-                                    <img src="assets/icon-types/ground.svg" alt="">
-                                </div>
-                            </div>
-                        </button>
+                    <div class="all" id="js-card">
                     </div>
                     <button class="btn-load-more">Load more Pokémons</button>
                 </div>
+                <div class="no-result" style="display: none;"></div>
             </div>
         </div>
     </section>

@@ -307,6 +307,9 @@ h3 {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+.card-pokemon .thumb-img {
+  max-width: 14.2rem;
+}
 .card-pokemon:hover {
   -webkit-transform: scale(1.02);
   transform: scale(1.02);
