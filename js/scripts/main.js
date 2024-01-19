@@ -135,9 +135,67 @@ const searchButton = document.getElementById('searchButton');
 
 searchInput.addEventListener('input', function() {
   searchButton.disabled = !searchInput.value.trim();
-
 });
 
+// Script para listar todos os tipos de Pokemon
+
+const areaList = document.getElementById('js-type-area');
+const areaListMobile = document.querySelector('.dropdown-select');
+
+axios({
+  method:"GET",
+  url:`https://pokeapi.co/api/v2/type`
+})
+.then(Response => {
+  const { results } = Response.data;
+
+  results.forEach((type, index) => {
+
+    if(index < 18) {
+     let itemType = document.createElement('li');
+     areaList.appendChild(itemType);
+
+     let buttonType = document.createElement('button');
+     buttonType.classList = `type-filter ${type.name}`
+     itemType.appendChild(buttonType)
+
+     let iconType = document.createElement('div');
+     iconType.classList ='icon'
+     buttonType.appendChild(iconType);
+
+     let srcType = document.createElement('img');
+     srcType.setAttribute('src', `assets/icon-types/${type.name}.svg`);
+     iconType.appendChild(srcType)
+
+     let nameType = document.createElement('span');
+     nameType.textContent = firstLetterUppercase(type.name);
+     buttonType.appendChild(nameType)
+
+     // Area do select mobile lista de pokemons
+
+     let itemTypeMobile = document.createElement('li');
+     areaListMobile.appendChild(itemTypeMobile);
+
+     let buttonTypeMobile = document.createElement('button');
+     buttonTypeMobile.classList = `type-filter ${type.name}`
+     itemTypeMobile.appendChild(buttonTypeMobile)
+
+     let iconTypeMobile = document.createElement('div');
+     iconTypeMobile.classList ='icon'
+     buttonTypeMobile.appendChild(iconTypeMobile);
+
+     let srcTypeMobile = document.createElement('img');
+     srcTypeMobile.setAttribute('src', `assets/icon-types/${type.name}.svg`);
+     iconTypeMobile.appendChild(srcTypeMobile)
+
+     let nameTypeMobile = document.createElement('span');
+     nameTypeMobile.textContent = firstLetterUppercase(type.name);
+     buttonTypeMobile.appendChild(nameTypeMobile)
+    }
+  })
+})
+
+ 
 
 
 
