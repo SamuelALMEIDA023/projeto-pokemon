@@ -195,6 +195,19 @@ axios({
   })
 })
 
+// Aqui é a funcionalidade Load More
+
+const btnLoadMore = document.getElementById('js-btn-load-more')
+
+let countPagination = 10;
+
+function showMorePagination () {
+  listaPokemons(`https://pokeapi.co/api/v2/pokemon?limit=9&offset=${countPagination}`);
+
+  countPagination = countPagination + 9;
+}
+
+btnLoadMore.addEventListener('click', showMorePagination);
  
 
 
