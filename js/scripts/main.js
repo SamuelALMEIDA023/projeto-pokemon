@@ -90,7 +90,7 @@ function listaPokemons(urlApi) {
     
     contador.innerText = count;
 
-    console.log(results)
+    
 
     results.forEach(pokemon => {
       let apiDetails = pokemon.url;
@@ -156,7 +156,8 @@ axios({
      areaList.appendChild(itemType);
 
      let buttonType = document.createElement('button');
-     buttonType.classList = `type-filter ${type.name}`
+     buttonType.classList = `type-filter ${type.name}`;
+     buttonType.setAttribute('code-type', index + 1)
      itemType.appendChild(buttonType)
 
      let iconType = document.createElement('div');
@@ -191,6 +192,12 @@ axios({
      let nameTypeMobile = document.createElement('span');
      nameTypeMobile.textContent = firstLetterUppercase(type.name);
      buttonTypeMobile.appendChild(nameTypeMobile)
+
+     const allTypes = document.querySelectorAll('.type-filter')
+
+     allTypes.forEach(btn => {
+      btn.addEventListener('click', filterByTypes)
+     })
     }
   })
 })
@@ -208,10 +215,64 @@ function showMorePagination () {
 }
 
 btnLoadMore.addEventListener('click', showMorePagination);
+
+
+// função para filtrar os pokemons por tipo
  
+function filterByTypes () {
+  let filterTypes = this.getAttribute('code-type');
+
+  const allCards = document.getElementById('js-card');
+  const btnLoadMore = document.getElementById('js-btn-load-more');
+  const countPokemons = document.getElementById('js-count-pokemons');
+  const allTypes = document.querySelectorAll('.type-filter')
+
+  allCards.innerHTML = ""
+  btnLoadMore.style.display = 'none'
+
+  allTypes.forEach(type => {
+    type.classList.remove('active');
+  }) 
+
+  this.classList.add('active');
+
+  axios({
+    method:'GET',
+    url:`https://pokeapi.co/api/v2/type/${filterTypes}`
+  })
+  .then(Response => {
+    const {pokemon} = Response.data;
+    countPokemons.textContent = pokemon.length;
+
+    pokemon.forEach(pok => {
+      const { url } = pok.pokemon;
+
+      axios({
+        method:'GET',
+        url:`${url}`
+      })
+      .then(Response => {
+        const { name, id, sprites, types } = Response.data;
+
+        const infoCard = {
+          nome: name, 
+          code: id, 
+          image: sprites.other.dream_world.front_default,
+          type: types[0].type.name
+        }
+
+        if(infoCard.image) {
+          createCardPokemon(infoCard.nome, infoCard.code, infoCard.image, infoCard.type);
+        }
+
+        const cardPokemon = document.querySelectorAll('.js-open-details-pokemon');
+
+        cardPokemon.forEach(card => {
+          card.addEventListener('click', openDetailsPokemon)
+        })
+      })
+    })
 
 
-
-
-
-
+  })
+}
