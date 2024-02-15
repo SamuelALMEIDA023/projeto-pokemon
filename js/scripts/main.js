@@ -230,6 +230,14 @@ function filterByTypes () {
   allCards.innerHTML = ""
   btnLoadMore.style.display = 'none'
 
+  const sectionPokemon = document.querySelector('.s-all-pokemon');
+  const pokemonPositionFirst = sectionPokemon.offsetTop;
+
+  window.scrollTo ({
+    top: pokemonPositionFirst + 288,
+    behavior: 'smooth'
+  })
+
   allTypes.forEach(type => {
     type.classList.remove('active');
   }) 
