@@ -244,43 +244,51 @@ function filterByTypes () {
 
   this.classList.add('active');
 
-  axios({
-    method:'GET',
-    url:`https://pokeapi.co/api/v2/type/${filterTypes}`
-  })
-  .then(Response => {
-    const {pokemon} = Response.data;
-    countPokemons.textContent = pokemon.length;
-
-    pokemon.forEach(pok => {
-      const { url } = pok.pokemon;
-
-      axios({
-        method:'GET',
-        url:`${url}`
-      })
-      .then(Response => {
-        const { name, id, sprites, types } = Response.data;
-
-        const infoCard = {
-          nome: name, 
-          code: id, 
-          image: sprites.other.dream_world.front_default,
-          type: types[0].type.name
-        }
-
-        if(infoCard.image) {
-          createCardPokemon(infoCard.nome, infoCard.code, infoCard.image, infoCard.type);
-        }
-
-        const cardPokemon = document.querySelectorAll('.js-open-details-pokemon');
-
-        cardPokemon.forEach(card => {
-          card.addEventListener('click', openDetailsPokemon)
+  if (filterTypes) {
+    axios({
+      method:'GET',
+      url:`https://pokeapi.co/api/v2/type/${filterTypes}`
+    })
+    .then(Response => {
+      const {pokemon} = Response.data;
+      countPokemons.textContent = pokemon.length;
+  
+      pokemon.forEach(pok => {
+        const { url } = pok.pokemon;
+  
+        axios({
+          method:'GET',
+          url:`${url}`
+        })
+        .then(Response => {
+          const { name, id, sprites, types } = Response.data;
+  
+          const infoCard = {
+            nome: name, 
+            code: id, 
+            image: sprites.other.dream_world.front_default,
+            type: types[0].type.name
+          }
+  
+          if(infoCard.image) {
+            createCardPokemon(infoCard.nome, infoCard.code, infoCard.image, infoCard.type);
+          }
+  
+          const cardPokemon = document.querySelectorAll('.js-open-details-pokemon');
+  
+          cardPokemon.forEach(card => {
+            card.addEventListener('click', openDetailsPokemon)
+          })
         })
       })
+  
+  
     })
+  } else {
+    allCards.innerHTML = ""
 
+    listaPokemons(`https://pokeapi.co/api/v2/pokemon?limit=9&offset`)
 
-  })
+    btnLoadMore.style.display = 'block'
+  }
 }
