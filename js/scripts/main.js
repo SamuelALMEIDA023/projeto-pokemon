@@ -230,6 +230,7 @@ function filterByTypes () {
   allCards.innerHTML = ""
   btnLoadMore.style.display = 'none'
 
+  // Mapeando e fazendo a funcionalidade para ''scrollTop'' ao clicar nos itens da lista de Pokemons
   const sectionPokemon = document.querySelector('.s-all-pokemon');
   const pokemonPositionFirst = sectionPokemon.offsetTop;
 
@@ -244,6 +245,7 @@ function filterByTypes () {
 
   this.classList.add('active');
 
+  //Funcionalidade ao clicar no "ALL" da lista de Pokemons
   if (filterTypes) {
     axios({
       method:'GET',
@@ -292,3 +294,31 @@ function filterByTypes () {
     btnLoadMore.style.display = 'block'
   }
 }
+
+// função para buscar pokemon
+
+const btnSearch = document.querySelector('.js-btn-search');
+const inputSearch = document.querySelector('.js-input-search')
+
+btnSearch.addEventListener('click', searchPokemon)
+
+//Chamando a função ao clicar no 'Enter'
+inputSearch.addEventListener('keyup', (event) => {
+  if (event.code === 'Enter') {
+    searchPokemon();
+  }
+})
+
+// função que busca o valor escrito no search
+function searchPokemon() {
+  let valueInput = inputSearch.value.toLowerCase();
+
+  axios({
+    method: 'GET',
+    url: `https://pokeapi.co/api/v2/pokemon/${valueInput}`
+  })
+  .then(response => {
+    console.log(response.data);
+  })
+}
+
