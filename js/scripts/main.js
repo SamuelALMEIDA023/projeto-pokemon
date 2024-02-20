@@ -8,6 +8,7 @@
 
 const cardPokemon = document.querySelectorAll('.js-open-details-pokemon');
 const closeModal = document.querySelector('.js-close-details-modal');
+const countPokemons = document.getElementById('js-count-pokemons');
 
 function openDetailsModal() {
     document.documentElement.classList.add('open-modal')
@@ -312,13 +313,51 @@ inputSearch.addEventListener('keyup', (event) => {
 // função que busca o valor escrito no search
 function searchPokemon() {
   let valueInput = inputSearch.value.toLowerCase();
+  // desabilitar filtro no tipo quando pesquisar o pokemon
+  const typeFilter = document.querySelectorAll('.type-filter'); 
+
+  typeFilter.forEach (type => {
+    type.classList.remove('active');
+  })
+
 
   axios({
     method: 'GET',
     url: `https://pokeapi.co/api/v2/pokemon/${valueInput}`
   })
   .then(response => {
-    console.log(response.data);
+    areaPokemon.innerHTML = "";
+    btnLoadMore.style.display = 'none';
+    countPokemons.textContent = 1;
+
+
+    const { name, id, sprites, types } = response.data;
+  
+    const infoCard = {
+      nome: name, 
+      code: id, 
+      image: sprites.other.dream_world.front_default,
+      type: types[0].type.name
+    }
+  
+    if(infoCard.image) {
+      createCardPokemon(infoCard.nome, infoCard.code, infoCard.image, infoCard.type);
+    }
+  
+    const cardPokemon = document.querySelectorAll('.js-open-details-pokemon');
+  
+    cardPokemon.forEach(card => {
+      card.addEventListener('click', openDetailsPokemon)
+    })
   })
+  //caso haja erro ao pesquisar o pokemon, trazer um alert (vou melhorar essa funcionalidade)
+  .catch((error) => {
+    if(error.response) {
+      areaPokemon.innerHTML = "";
+      btnLoadMore.style.display = 'none';
+      countPokemons.textContent = 0;
+      alert('Não obtvemos resposta para a sua pesquisa');
+    }
+  }) 
 }
 
