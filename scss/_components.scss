@@ -214,112 +214,112 @@
              background-color: rgba(156, 186, 72, 0.2);
          }
         } 
-     }
-     &.dark {
+    }
+    &.dark {
         .image {
          &:after {
              background-color: rgba(89, 87, 97, 0.2);
          }
         } 
-     }
-     &.dragon {
+    }
+    &.dragon {
         .image {
          &:after {
              background-color: rgba(44, 106, 193, 0.2);
          }
         } 
-     }
-     &.eletric {
+    }
+    &.eletric {
         .image {
          &:after {
              background-color: rgba(238, 218, 103, 0.2);
          }
         } 
-     }
-     &.fairy {
+    }
+    &.fairy {
         .image {
          &:after {
              background-color: rgba(226, 150, 225, 0.2);
          }
         } 
-     }
-     &.figthing {
+    }
+    &.figthing {
         .image {
          &:after {
              background-color: rgba(196, 77, 97, 0.2);
          }
         } 
-     }
-     &.ground {
+    }
+    &.ground {
         .image {
          &:after {
              background-color: rgba(206, 128, 86, 0.2);
          }
         } 
-     }
-     &.ice {
+    }
+    &.ice {
         .image {
          &:after {
              background-color: rgba(139, 206, 193, 0.2);
          }
         } 
-     }
-     &.normal {
+    }
+    &.normal {
         .image {
          &:after {
              background-color: rgba(160, 162, 159, 0.2);
          }
         } 
-     }
-     &.poison {
+    }
+    &.poison {
         .image {
          &:after {
              background-color: rgba(172, 106, 202, 0.2);
          }
         } 
-     }
-     &.psychic {
+    }
+    &.psychic {
         .image {
          &:after {
              background-color: rgba(235, 140, 133, 0.2);
          }
         } 
-     }
-     &.rock {
+    }
+    &.rock {
         .image {
          &:after {
              background-color: rgba(139, 206, 193, 0.2);
          }
         } 
-     }
-     &.steel {
+    }
+    &.steel {
         .image {
          &:after {
              background-color: rgba(101, 148, 161, 0.2);
          }
         } 
-     }
-     &.water {
+    }
+    &.water {
         .image {
          &:after {
              background-color: rgba(136, 163, 212, 0.2);
          }
         } 
-     }
-     &.fire {
+    }
+    &.fire {
         .image {
          &:after {
              background-color: rgba(246, 109, 109, 0.2);
          }
         } 
-     }
-     &.flying {
+    }
+    &.flying {
         .image {
          &:after {
              background-color: rgba(166, 187, 232, 0.2);
          }
         } 
-     }
+    }
     .image {
         position: relative;
         width: 20.0rem;
@@ -473,6 +473,13 @@
     opacity: 0;
     pointer-events: none;
     transition: all .3s;
+    &[typePokemonModal="fire"] {
+        .box {
+            .left-container {
+                background-image: url("/assets/bg-types/fire.svg");
+            }
+        }
+    }
     &[typePokemonModal="grass"] {
         .box {
             .left-container {
@@ -577,7 +584,14 @@
                 background: url("/assets/bg-types/steel.svg");
             }
         }
-    }  
+    }
+    &[typePokemonModal="water"] {
+        .box {
+            .left-container {
+                background-image: url("/assets/bg-types/water.svg");
+            }
+        }
+    }
     .overlay {
         position: fixed;
         top: 0;

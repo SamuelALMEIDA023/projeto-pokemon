@@ -544,6 +544,9 @@ h3 {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+.modal[typePokemonModal=fire] .box .left-container {
+  background-image: url("/assets/bg-types/fire.svg");
+}
 .modal[typePokemonModal=grass] .box .left-container {
   background-image: url("/assets/bg-types/grass.svg");
 }
@@ -588,6 +591,9 @@ h3 {
 }
 .modal[typePokemonModal=steal] .box .left-container {
   background: url("/assets/bg-types/steel.svg");
+}
+.modal[typePokemonModal=water] .box .left-container {
+  background-image: url("/assets/bg-types/water.svg");
 }
 .modal .overlay {
   position: fixed;
