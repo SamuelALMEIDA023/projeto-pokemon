@@ -130,13 +130,16 @@ function openDetailsPokemon() {
 
   let codePokemon = this.getAttribute('code-pokemon');
   let pokemonImg = this.querySelector('.thumb-img');
-
+  let pokemonIcon = this.getElementById('js-icon-modal')
+  
+  console.log(pokemonIcon)
   const modalDetails = document.getElementById('js-modal-details');
   const pokemonImgModal = document.getElementById('js-img-pokemon-modal');
 
-  //pegando o src da imagagem do card e atrelando ao src da imagem do modal
+  //pegando o src da imagem do card e atrelando ao src da imagem do modal
   pokemonImgModal.setAttribute('src', pokemonImg.getAttribute('src'));
   modalDetails.setAttribute('typePokemonModal', this.classList[2]);
+  modalDetails.setAttribute('src', pokemonIcon.getAttribute('src'))
   
 
   //axios({
